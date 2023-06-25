@@ -1,4 +1,5 @@
 import srt
+import moviepy.editor as mp
 from modules.filepath import FilePath
 
 video_filepath = FilePath.read_video_filepath()
@@ -13,3 +14,6 @@ parsed_subtitles = srt.parse(srt_data)
 
 #create list of subtitles
 subtitles_list = list(parsed_subtitles)
+
+#create VideoClip object
+video = mp.VideoFileClip(video_filepath, audio=True)
