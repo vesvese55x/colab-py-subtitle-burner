@@ -58,3 +58,8 @@ class FilePath:
                 return srt_filepath
             else:
                 print("This file is not a srt file. Please try again.")
+
+    @staticmethod
+    # get the file path without the file extension
+    def remove_file_extension(file_path):
+        return os.path.splitext(file_path)[0]
