@@ -43,3 +43,18 @@ class FilePath:
                 return video_filepath
             else:
                 print("This file is not a video. Please try again.")
+
+    @staticmethod
+    # validate that the file path is for a srt file
+    def read_srt_filepath():
+        while True:
+            srt_filepath = FilePath.read_filepath(
+                "Srt file path: ")
+
+            file_extension = os.path.splitext(srt_filepath)[1].lower()
+
+            # check if the file extension is .srt
+            if (file_extension == ".srt"):
+                return srt_filepath
+            else:
+                print("This file is not a srt file. Please try again.")
