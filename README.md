@@ -1,5 +1,5 @@
 # Subtitle Burner
-A console application that burns srt subtitles to a video written in Python.
+A console application written in Python that burns srt subtitles into video .
 ## Workflow of the program
 1. The program starts by asking the user for the file path of the video.
 2. Then, the user is asked for the file path of the srt file.
