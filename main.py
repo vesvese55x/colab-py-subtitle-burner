@@ -51,3 +51,19 @@ def create_subtitle_clips(subtitles_list):
 
 
 subtitle_clips = create_subtitle_clips(subtitles_list)
+
+# compose VideoClip and TextClips
+final_video = mp.CompositeVideoClip([video] + subtitle_clips)
+
+# the video path without extension
+video_path_without_extension = FilePath.remove_file_extension(
+    video_filepath)
+
+# the video extension
+video_extension = FilePath.get_file_extension(video_filepath)
+
+# the file path of the subtitled video
+new_video_path = video_path_without_extension+"[subtitled]"+video_extension
+
+#write the subtitled video
+final_video.write_videofile(new_video_path)
