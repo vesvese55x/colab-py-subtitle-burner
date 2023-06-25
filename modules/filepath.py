@@ -51,7 +51,7 @@ class FilePath:
             srt_filepath = FilePath.read_filepath(
                 "Srt file path: ")
 
-            file_extension = os.path.splitext(srt_filepath)[1].lower()
+            file_extension = FilePath.get_file_extension(srt_filepath)
 
             # check if the file extension is .srt
             if (file_extension == ".srt"):
@@ -63,3 +63,8 @@ class FilePath:
     # get the file path without the file extension
     def remove_file_extension(file_path):
         return os.path.splitext(file_path)[0]
+
+    @staticmethod
+    # get the file extension from the file path
+    def get_file_extension(file_path):
+        return os.path.splitext(file_path)[1]
