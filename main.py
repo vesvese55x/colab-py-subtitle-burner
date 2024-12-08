@@ -33,8 +33,17 @@ def create_subtitle_clips(subtitles_list):
         video_width, video_height = video.size
 
         # create TextClip object for the subtitle
-        text_clip = mp.TextClip(subtitle.content, fontsize=40, font='Arial-bold', color="white", stroke_color='black', stroke_width=2, size=(
-            video_width*1/2, None), method='caption')
+       text_clip = mp.TextClip(
+    subtitle.content, 
+    fontsize=32,  # Small-medium arasında bir büyüklük olarak 32 seçildi
+    font='Arial-Bold-Italic',  # Kalın ve italik Arial yazı tipi
+    color="yellow",  # Yazı rengi sarı
+    stroke_color='black', 
+    stroke_width=2, 
+    size=(video_width * 1/2, None),  # Metin genişliği, videonun yarısı kadar
+    method='caption'
+)
+
 
         # set the TextClip start and duration
         text_clip = text_clip.set_start(start_time).set_duration(duration)
